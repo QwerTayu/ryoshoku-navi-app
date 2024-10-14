@@ -3,6 +3,9 @@
 import { GlobalContext } from "@/contexts/GlobalContext";
 import { Liff } from "@line/liff";
 import { useCallback, useEffect, useState } from "react";
+import { ChakraProvider } from '@chakra-ui/react'
+import theme from './theme'
+
 
 export default function Template({ children }: { children: React.ReactNode }) {
   const [liffObject, setLiffObject] = useState<Liff | null>(null);
@@ -33,7 +36,9 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   return (
     <GlobalContext.Provider value={{ liff: liffObject, liffError: liffError }}>
-      <div>{children}</div>
+      <ChakraProvider theme={theme}>
+        <div>{children}</div>
+      </ChakraProvider>
     </GlobalContext.Provider>
   );
 }
