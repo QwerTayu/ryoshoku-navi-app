@@ -13,20 +13,20 @@ import {
 } from '@chakra-ui/react'
 
 // 今日の日付をフォーマットする関数
-const formatDate = (date) => {
+const formatDate = (date: Date) => {
   const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 月は0始まりなので+1
   const day = date.getDate().toString().padStart(2, '0');
   return `${month}/${day}`;
 };
 
 // 曜日を取得する関数
-const getDayOfWeek = (date) => {
+const getDayOfWeek = (date: Date) => {
   const days = ['日', '月', '火', '水', '木', '金', '土'];
   return days[date.getDay()];
 };
 
 // 指定した日数後の日付を計算する関数
-const addDays = (date, days) => {
+const addDays = (date: Date, days: number) => {
   const result = new Date(date);
   result.setDate(result.getDate() + days);
   return result;
