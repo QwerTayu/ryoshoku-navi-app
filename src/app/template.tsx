@@ -21,7 +21,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         liff
           .init({ 
             liffId: process.env.NEXT_PUBLIC_LIFF_ID! ,
-            withLoginOnExternalBrowser: true, // 外部ブラウザでもログインできるように
+            // withLoginOnExternalBrowser: true, // 外部ブラウザでもログインできるように
           })
           .then(() => {
             console.log("LIFF init succeeded.");
